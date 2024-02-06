@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# D-Diary 📖
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 개인 다이어리 웹 프로젝트입니다.
 
-Currently, two official plugins are available:
+[[프로젝트 이미지]]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[[간단한 프로젝트 소개]]
 
-## Expanding the ESLint configuration
+## 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Static Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Static Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Static Badge](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Static Badge](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)
 
-- Configure the top-level `parserOptions` property like this:
+## Dependencies Version
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+![Static Badge](https://img.shields.io/badge/react-ver_18.2.0-61DAFB?style=flat-square)
+![Static Badge](https://img.shields.io/badge/react--dom-ver_18.2.0-61DAFB?style=flat-square)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 기능 구현 목록
+
+[[목록 나열]]
+
+## 프로젝트 결과물
+
+[[프로젝트 결과물]]
+
+## 외부 리소스
+
+> 리소스 출처
