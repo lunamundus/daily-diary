@@ -18,6 +18,9 @@
 
 ![Static Badge](https://img.shields.io/badge/react-ver_18.2.0-61DAFB?style=flat-square)
 ![Static Badge](https://img.shields.io/badge/react--dom-ver_18.2.0-61DAFB?style=flat-square)
+![Static Badge](https://img.shields.io/badge/react--router--dom-ver_6.22.0-61DAFB?style=flat-square)
+![Static Badge](https://img.shields.io/badge/styled--components-ver_6.1.8-61DAFB?style=flat-square)
+![Static Badge](https://img.shields.io/badge/styled--reset-ver_4.5.2-61DAFB?style=flat-square)
 
 ## 기능 구현 목록
 
