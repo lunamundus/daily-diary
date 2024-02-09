@@ -6,10 +6,10 @@ import { createGlobalStyle, styled } from "styled-components";
 import reset from "styled-reset";
 
 // about Pages
-import MainPage from "./pages/MainPage";
-import LoginPage from "./pages/LoginPage";
-import CreateAccountPage from "./pages/CreateAccountPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
+import MainPage from "@pages/MainPage";
+import LoginPage from "@pages/LoginPage";
+import CreateAccountPage from "@pages/CreateAccountPage";
+import ResetPasswordPage from "@pages/ResetPasswordPage";
 
 const GlobalStyles = createGlobalStyle`
 ${reset}
