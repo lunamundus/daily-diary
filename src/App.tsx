@@ -10,6 +10,7 @@ import MainPage from "@pages/MainPage";
 import LoginPage from "@pages/LoginPage";
 import CreateAccountPage from "@pages/CreateAccountPage";
 import ResetPasswordPage from "@pages/ResetPasswordPage";
+import ProtectedRoute from "./components/protected-route";
 
 const GlobalStyles = createGlobalStyle`
 ${reset}
@@ -28,7 +29,11 @@ const Wrapper = styled.div`
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainPage />,
+    element: (
+      <ProtectedRoute>
+        <MainPage />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/login",

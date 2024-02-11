@@ -17,6 +17,20 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const {
+      target: { name, value },
+    } = event;
+
+    if (name === "email") {
+      setEmail(value);
+    } else if (name === "password") {
+      setPassword(value);
+    }
+  };
+
+  const onSubmit = () => {};
+
   return (
     <Wrapper className="container">
       <Wrapper>
@@ -26,9 +40,13 @@ function LoginPage() {
             <Wrapper className="inputForm">
               <img src="/public/email-icon.svg" />
               <Input
-                type="email"
                 className="loginInput"
                 placeholder="Enter your Email"
+                type="email"
+                onChange={onChange}
+                name="email"
+                value={email}
+                required
               />
             </Wrapper>
           </Wrapper>
@@ -38,9 +56,13 @@ function LoginPage() {
             <Wrapper className="inputForm">
               <img src="/public/password-icon.svg" />
               <Input
-                type="password"
                 className="loginInput"
                 placeholder="Enter your password"
+                type="password"
+                onChange={onChange}
+                name="password"
+                value={password}
+                required
               />
             </Wrapper>
 
@@ -54,7 +76,12 @@ function LoginPage() {
               </Span>
             </Wrapper>
 
-            <Input type="submit" className="submit-button" value="Sign In" />
+            <Input
+              type="submit"
+              className="submit-button"
+              value="Sign In"
+              onSubmit={onSubmit}
+            />
 
             <P className="text-p">
               Don't have an account?{" "}
