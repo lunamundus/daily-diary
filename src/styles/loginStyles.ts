@@ -31,8 +31,16 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
     justify-content: space-between;
+    gap: 10px;
+  }
+
+  &.flex-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
   }
 `;
 
@@ -95,7 +103,7 @@ export const Span = styled.span`
   &.text-span {
     font-size: 15px;
     margin-left: 5px;
-    color: #0123b4;
+    color: #000000;
     font-weight: 600;
 
     a {
