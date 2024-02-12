@@ -1,6 +1,11 @@
 // about React
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+// about Firebase
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { FirebaseError } from "firebase/app";
+import { auth } from "@/firebase";
 
 // about Styles
 import {
@@ -14,8 +19,10 @@ import {
 } from "@styles/loginStyles";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -29,12 +36,28 @@ function LoginPage() {
     }
   };
 
-  const onSubmit = () => {};
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError("");
+
+    if (email === "" || password === "") {
+      return;
+    }
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/");
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        setError(error.message);
+      }
+    }
+  };
 
   return (
     <Wrapper className="container">
       <Wrapper>
-        <Form className="loginForm">
+        <Form className="loginForm" onSubmit={onSubmit}>
           <Wrapper className="flex-column">
             <Label>Email</Label>
             <Wrapper className="inputForm">
@@ -76,31 +99,28 @@ function LoginPage() {
               </Span>
             </Wrapper>
 
-            <Input
-              type="submit"
-              className="submit-button"
-              value="Sign In"
-              onSubmit={onSubmit}
-            />
+            <Input type="submit" className="submit-button" value="Sign In" />
 
-            <P className="text-p">
-              Don't have an account?{" "}
-              <Span className="text-span">
-                <Link to="/create-account">Sign Up</Link>
-              </Span>
-            </P>
+            {error !== "" ? <P>{error}</P> : null}
+          </Wrapper>
 
-            <P className="text-p line">Or With</P>
+          <P className="text-p">
+            Don't have an account?{" "}
+            <Span className="text-span">
+              <Link to="/create-account">Sign Up</Link>
+            </Span>
+          </P>
 
-            <Wrapper className="flex-row">
-              <Button className="btn google">
-                <img src="/public/google-logo.svg" /> Google
-              </Button>
+          <P className="text-p line">Or With</P>
 
-              <Button className="btn github">
-                <img src="/public/github-logo.svg" /> GitHub
-              </Button>
-            </Wrapper>
+          <Wrapper className="flex-row">
+            <Button className="btn google">
+              <img src="/public/google-logo.svg" /> Google
+            </Button>
+
+            <Button className="btn github">
+              <img src="/public/github-logo.svg" /> GitHub
+            </Button>
           </Wrapper>
         </Form>
       </Wrapper>
